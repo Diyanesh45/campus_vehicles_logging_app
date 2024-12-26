@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play Video</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #121212; /* YouTube-like dark background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; /* Full viewport height */
+            padding: 20px; /* Ensure text is not hidden */
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border: 2px solid #333; /* Subtle border for contrast */
+            border-radius: 8px;
+            width: 100%; /* Adjust width dynamically */
+            max-width: 1280px; /* Maximum width for large screens */
+            height: auto; /* Auto adjust height */
+            aspect-ratio: 16/9; /* Keep video in 16:9 aspect ratio */
+        }
+        video {
+            width: 100%; /* Full width of the container */
+            height: 100%; /* Maintain aspect ratio */
+            border-radius: 8px; /* Match the container's rounded corners */
+        }
+        .controls {
+            margin-top: 20px; /* Space between video and text */
+            text-align: center;
+        }
+        a {
+            color: #00bcd4; /* YouTube-like blue link color */
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video controls>
+            <source src="{{ video_path }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="controls">
+        <a href="/home">Back to Home</a>
+    </div>
+</body>
+</html>
